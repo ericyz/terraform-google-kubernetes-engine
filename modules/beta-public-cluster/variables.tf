@@ -510,6 +510,18 @@ variable "gcloud_skip_download" {
   default     = true
 }
 
+variable "add_shadow_firewall_rules" {
+  type        = bool
+  description = "Create shadow firewall rules to match the GKE managed ingress firewall rules."
+  default     = false
+}
+
+variable "shadow_firewall_rules_priority" {
+  type        = number
+  description = "Priority for the shadow ingress firewall rules."
+  default     = 999
+}
+
 variable "disable_default_snat" {
   type        = bool
   description = "Whether to disable the default SNAT to support the private use of public IP addresses"
